@@ -12,20 +12,11 @@ namespace Library.Core.Entityes
         #region Prop
         public string Firstname { get; set; }
         public string LastName { get; set; }
-        public int TcNo { get; set; }
         public string PhoneNo { get; set; }
-        public int AddressId { get; set; }
         public string Password { get; set; }
-        public DateTime BirthDay { get; set; }
         public string EMail { get; set; }
         public bool Gender { get; set; }
-        public int RoleId { get; set; }
+        public DateTime BirthDay { get; set; }
         #endregion
-
-        #region Nav. Prop.
-        public Role Role { get; set; }
-        public Address Address { get; set; }    
-        #endregion
-
     }
 }

@@ -15,9 +15,12 @@ namespace Library.Core.Context
         {
         }
 
-        public virtual DbSet<Role> Role { get; set; }
+        #region DbSet
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
-
+        public virtual DbSet<Publisher> Publishers { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Author> Authors { get; set; } 
+        #endregion
     }
 }

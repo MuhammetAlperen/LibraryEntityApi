@@ -21,10 +21,5 @@ namespace Library.Core.Entityes
         public bool Gender { get; set; }
         public int RoleId { get; set; }
         #endregion
-
-        #region Nav. Prop.
-        public Role Role { get; set; }
-        public Address Address { get; set; }
-        #endregion
     }
 }

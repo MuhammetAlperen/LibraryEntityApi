@@ -11,12 +11,7 @@ namespace Library.Core.Entityes
     {
         #region Prop.
         public string PublisherName { get; set; }
-        public string Historical { get; set; }
-        public string AdressId { get; set; }
-        #endregion
-
-        #region Nav. Prop.
-        public Address Address { get; set; }
+        public string Description { get; set; }
         #endregion
     }
 }

@@ -11,20 +11,17 @@ namespace Library.Core.Entityes
     {
         #region Prop.
         public string BookName { get; set; }
-        public string Content { get; set; }
-        public int NumberOfPages { get; set; }
-        public int FirstYearOfPrinting { get; set; }
-        public int Oppression { get; set; }
+        public string Contents { get; set; }
+        public int Page { get; set; }
+        public DateTime? FirstEdition { get; set; }
+        public int Printing { get; set; }
         public int AuthorId { get; set; }
         public int PublisherId { get; set; }
-        public int CategoryId { get; set; }
         #endregion
 
         #region Nav. Prop.
         public Author Author { get; set; }
         public Publisher Publisher { get; set; }
-        public Category Category { get; set; }
-
         #endregion
     }
 }

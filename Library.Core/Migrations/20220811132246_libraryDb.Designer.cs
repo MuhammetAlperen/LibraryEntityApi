@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Core.Migrations
 {
     [DbContext(typeof(LibraryDbContext))]
-    [Migration("20220811104324_libraryDb")]
+    [Migration("20220811132246_libraryDb")]
     partial class libraryDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,113 @@ namespace Library.Core.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("Library.Core.Entityes.Author", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AuthorBiography")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CreatedUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DeleteDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DeleteUserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdateUserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Authors");
+                });
+
+            modelBuilder.Entity("Library.Core.Entityes.Book", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Contents")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CreatedUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DeleteDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("DeleteUserId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("FirstEdition")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Page")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Printing")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PublisherId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdateUserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("PublisherId");
+
+                    b.ToTable("Books");
+                });
 
             modelBuilder.Entity("Library.Core.Entityes.Customer", b =>
                 {
@@ -47,17 +154,21 @@ namespace Library.Core.Migrations
                     b.Property<int?>("DeleteUserId")
                         .HasColumnType("int");
 
+                    b.Property<string>("EMail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Firstname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("Gender")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Mail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -69,13 +180,6 @@ namespace Library.Core.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("UpdateDateTime")
                         .HasColumnType("datetime2");
 
@@ -83,8 +187,6 @@ namespace Library.Core.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
 
                     b.ToTable("Customer");
                 });
@@ -96,6 +198,9 @@ namespace Library.Core.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AddressId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("BirthDay")
                         .HasColumnType("datetime2");
@@ -112,15 +217,15 @@ namespace Library.Core.Migrations
                     b.Property<int?>("DeleteUserId")
                         .HasColumnType("int");
 
+                    b.Property<string>("EMail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("Gender")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Mail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -141,6 +246,9 @@ namespace Library.Core.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TcNo")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("UpdateDateTime")
                         .HasColumnType("datetime2");
 
@@ -149,12 +257,10 @@ namespace Library.Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RoleId");
-
                     b.ToTable("Employee");
                 });
 
-            modelBuilder.Entity("Library.Core.Entityes.Role", b =>
+            modelBuilder.Entity("Library.Core.Entityes.Publisher", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -175,12 +281,13 @@ namespace Library.Core.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("PublisherName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -192,29 +299,26 @@ namespace Library.Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Role");
+                    b.ToTable("Publishers");
                 });
 
-            modelBuilder.Entity("Library.Core.Entityes.Customer", b =>
+            modelBuilder.Entity("Library.Core.Entityes.Book", b =>
                 {
-                    b.HasOne("Library.Core.Entityes.Role", "Role")
+                    b.HasOne("Library.Core.Entityes.Author", "Author")
                         .WithMany()
-                        .HasForeignKey("RoleId")
+                        .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Role");
-                });
-
-            modelBuilder.Entity("Library.Core.Entityes.Employee", b =>
-                {
-                    b.HasOne("Library.Core.Entityes.Role", "Role")
+                    b.HasOne("Library.Core.Entityes.Publisher", "Publisher")
                         .WithMany()
-                        .HasForeignKey("RoleId")
+                        .HasForeignKey("PublisherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Role");
+                    b.Navigation("Author");
+
+                    b.Navigation("Publisher");
                 });
 #pragma warning restore 612, 618
         }
