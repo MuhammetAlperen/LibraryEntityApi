@@ -14,6 +14,7 @@ namespace Library.Core.Entityes
         public string Surname { get; set; }
         public int TcNo { get; set; }
         public string PhoneNo { get; set; }
+        public int AddressId { get; set; }
         public string Password { get; set; }
         public DateTime BirthDay { get; set; }
         public string EMail { get; set; }
@@ -23,6 +24,7 @@ namespace Library.Core.Entityes
 
         #region Nav. Prop.
         public Role Role { get; set; }
+        public Address Address { get; set; }
         #endregion
     }
 }

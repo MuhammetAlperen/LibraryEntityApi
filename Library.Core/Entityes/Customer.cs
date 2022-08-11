@@ -10,10 +10,11 @@ namespace Library.Core.Entityes
     public class Customer : EntityBase<int>
     {
         #region Prop
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public string Firstname { get; set; }
+        public string LastName { get; set; }
         public int TcNo { get; set; }
         public string PhoneNo { get; set; }
+        public int AddressId { get; set; }
         public string Password { get; set; }
         public DateTime BirthDay { get; set; }
         public string EMail { get; set; }
@@ -23,6 +24,7 @@ namespace Library.Core.Entityes
 
         #region Nav. Prop.
         public Role Role { get; set; }
+        public Address Address { get; set; }    
         #endregion
 
     }
