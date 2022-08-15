@@ -10,8 +10,8 @@ namespace Library.Core.Entityes
     public class Employee : EntityBase<int>
     {
         #region Prop
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public int TcNo { get; set; }
         public string PhoneNo { get; set; }
         public int AddressId { get; set; }
