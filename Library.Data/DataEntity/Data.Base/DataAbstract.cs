@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Data.DataEntity.Data.Base
 {
-    public class DataAbstract<Tıd>
+    public class DataAbstract<TId>
     {
     }
 }

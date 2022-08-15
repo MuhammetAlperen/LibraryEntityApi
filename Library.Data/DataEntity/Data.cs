@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Data.DataEntity
 {
-    public class Data<Tıd> : DataInterface
+    public class Data<TId> : DataInterface
     {
     }
 }
