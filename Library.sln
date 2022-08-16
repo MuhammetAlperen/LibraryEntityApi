@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.API", "Library.API\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Core", "Library.Core\Library.Core.csproj", "{34525CF9-7A7F-438B-8339-CFF2F893F6A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Repository", "Library.Repository\Library.Repository.csproj", "{0A2D16FD-D508-493C-AD28-A1AB8805EB4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Repository", "Library.Repository\Library.Repository.csproj", "{0A2D16FD-D508-493C-AD28-A1AB8805EB4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Data", "Library.Data\Library.Data.csproj", "{CE065CEE-F87F-4E19-8C92-D2D07310386E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Service", "Library.Data\Library.Service.csproj", "{CE065CEE-F87F-4E19-8C92-D2D07310386E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

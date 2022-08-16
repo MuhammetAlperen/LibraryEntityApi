@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Repository.RepositoryBase
+namespace Library.Repository.Base
 {
-    public interface RepositoryInterface
+    public interface ICostumerRepository
     {
     }
 }

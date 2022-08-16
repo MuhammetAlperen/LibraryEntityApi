@@ -1,4 +1,5 @@
 ﻿using Library.Core.Entityes.Base;
+using Library.Repository.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;

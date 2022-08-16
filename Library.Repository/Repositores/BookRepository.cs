@@ -1,13 +1,13 @@
-﻿using Library.Data.Data.Base;
+﻿using Library.Repository.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Data.DataEntity
+namespace Library.Repository.Repositores
 {
-    public class Data<TId> : DataInterface
+    public class BookRepository <TId> : IBookRepository
     {
     }
 }

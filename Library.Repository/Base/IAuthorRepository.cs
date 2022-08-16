@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Data.Data.Base
+namespace Library.Repository.Base
 {
-    public interface DataInterface
+    public interface IAuthorRepository
     {
     }
 }

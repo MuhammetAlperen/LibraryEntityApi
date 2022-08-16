@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Data.DataEntity.Data.Base
+namespace Library.Service.Base
 {
-    public class DataAbstract<TId>
+    public interface IAuthorService
     {
     }
 }
