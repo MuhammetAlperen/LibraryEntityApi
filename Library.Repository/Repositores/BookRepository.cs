@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Repository.Repositores
 {
-    public class BookRepository : IBookRepository , IRepository
+    public class BookRepository : IBookRepository 
     {
     }
 }
