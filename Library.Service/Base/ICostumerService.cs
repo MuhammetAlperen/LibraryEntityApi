@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Service.Base
 {
-    internal interface ICostumerService
+    public interface ICostumerService
     {
     }
 }
