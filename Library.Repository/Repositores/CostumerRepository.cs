@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Repository.Repositores
 {
-    public class CostumerRepository <TId> : ICostumerRepository
+    public class CostumerRepository : ICostumerRepository , IRepository
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Repository.Base
 {
-    public abstract class RepositoryAbstract<TId>
+    public interface IRepository
     {
     }
 }
